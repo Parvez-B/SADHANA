@@ -164,10 +164,137 @@
             z-index: 10;
         }
 
-        /* Add style for navigation buttons */
+        /* Add style for navigation buttons
+        
+        
+        
+        
+         <!-- <div class="pa">
+        <h3 style="margin-right: 30px; padding: 2px;">Internalize ---> Empower ---> Evolve</h3>
+
+       <!-- </div> -->
+        */
         .swiper-button-prev,
         .swiper-button-next {
             font-size: 25px;
+        }
+
+
+
+
+        @media screen and (max-width: 1024px) {
+            header h1 {
+                font-size: 1.8em;
+                margin-left: 30px;
+            }
+
+            header ul {
+                margin-top: 20px;
+            }
+
+            .menu ul a {
+                font-size: 1.2em;
+                margin-left: 20px;
+            }
+
+            .logo1 {
+                width: 100px;
+                height: 90px;
+            }
+
+            .logo2 {
+                width: 160px;
+                height: 70px;
+            }
+
+            .home-img {
+                height: 400px;
+            }
+
+            .text-overlay h1 {
+                font-size: 30px;
+            }
+
+            .text-overlay p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+                margin-left: 0;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu ul a {
+                font-size: 1.2em;
+            }
+
+            .home-img {
+                height: 300px;
+            }
+
+            .text-overlay h1 {
+                font-size: 28px;
+            }
+
+            .text-overlay p {
+                font-size: 14px;
+            }
+
+            .logo1,
+            .logo2 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+                margin-left: 0;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .menu ul a {
+                font-size: 1em;
+            }
+
+            .home-img {
+                height: 200px;
+            }
+
+            .text-overlay h1 {
+                font-size: 24px;
+            }
+
+            .text-overlay p {
+                font-size: 12px;
+            }
+
+            .logo1 {
+                width: 80px;
+                height: 70px;
+            }
+
+            .logo2 {
+                width: 140px;
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -176,21 +303,20 @@
         <header id="#home">
            <img src="clogo-removebg-preview.png" class="logo1">
            <h1> Welcom To SADHANA-The IT Club </h1>
-           <img src="logo.png" class="logo2"> 
+           <img src="logo.png" class="logo2"> <br>
+        
            
              
        </header>
-       <div class="pa">
-        <h3 style="margin-right: 30px; padding: 2px;">Internalize ---> Empower ---> Evolve</h3>
-
-       </div>
+       
        <div class="menu">  
            <ul style="margin-top: 10px;">
 
 <!-- <a href="#" >About The Program</a> -->
 <a href="#home">Home</a>
-<a href="#apti">Aptitude</a> 
 <a href="#tranding">Gallery</a>
+<a href="#apti">Aptitude</a> 
+<a href="#about">About</a>
 </ul>
 </div>
 
@@ -206,7 +332,6 @@
 
 
 
-
     <section id="tranding" class="gallery-cont" >
         <div class="container">
             <h1 class="text-center section-subheading">Gallery</h1>
@@ -217,7 +342,7 @@
                     <!-- Slide-start -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="2.jpg" alt="Tranding">
+                            <img src="2-1.jpg" alt="Tranding">
                         </div>
                         <div class="tranding-slide-content">
                             <!-- <h1 class="food-price">CEO</h1> -->
@@ -465,7 +590,7 @@
                      <!-- Slide-start -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="14.jpeg" alt="Tranding">
+                            <img src="14-1.jpg" alt="Tranding">
                         </div>
                         <div class="tranding-slide-content">
                             <!-- <h1 class="food-price">Team</h1> -->
@@ -489,7 +614,7 @@
                         <div class="tranding-slide-content">
                             <!-- <h1 class="food-price">Team</h1> -->
                             <div class="tranding-slide-content-bottom">
-                                <!-- <h2 class="food-name">KIRAN</h2> -->
+                                <!-- <h2 class="food-name">Innovation Instigators</h2> -->
                                 <h3 class="food-rating">
                                     <!-- <span>2014</span> -->
                                     <div class="description">
@@ -541,7 +666,7 @@
 
 
 
-    <footer class="footer bg-dark text-light py-5">
+    <footer class="footer bg-dark text-light py-5" id="about">
         <div class="container">
             <div class="row">
                 <!-- Column 1: Logo and About Section -->
@@ -559,8 +684,9 @@
                     <h5 class="footer-heading">Quick Links</h5>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#apti">Aptitude</a></li>
                         <li><a href="#tranding">Gallery</a></li>
+                        <li><a href="#apti">Aptitude</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </div>
     
