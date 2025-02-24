@@ -209,9 +209,11 @@ button span {
 
 
     </style>
+
+    
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="scriptButton">
         <div class="login-text">
             <button class="cta"><i class="fas fa-chevron-down fa-1x"></i></button>
             <div class="text">
@@ -227,6 +229,7 @@ button span {
                 <button class="login-btn" type="submit"><span>Log In</span></button>
             </form>
                 <div class="error-message" id="error-message"></div>
+                <div class="disqualified-message" id="disqualified-message"></div>
             </div>
         </div>
         <div class="call-text">
@@ -236,6 +239,18 @@ button span {
     </div>
      
     <script>
+
+if (sessionStorage.getItem('loggedIn') === 'true') {
+            // Disable form fields and show disqualified message
+            document.getElementById('username').disabled = true;
+            document.getElementById('password').disabled = true;
+            document.querySelector('.login-btn').disabled = true;
+            document.getElementById('disqualified-message').textContent = "You are disqualified from logging in again.";
+        }
+    
+
+       
+
         var cta = document.querySelector(".cta");
         var check = 0;
 
@@ -255,30 +270,6 @@ button span {
                 check = 0;
             }
         });
-     
-    // Function to authenticate the user using if-else if statements
-    // function authenticate() {
-    //     // Get username and password from the input fields
-    //     const username = document.getElementById('Username').value;
-    //     const password = document.getElementById('Password').value;
-
-    //     // Check credentials using if-else if
-    //     if (username === "root" && password === "root") {
-            
-    //       //  window.location.href = "Admin.html";
-    //     } else if (username === "MCA1" && password === "MCA@1") {
-            
-    //         window.location.href = "mca1.html";
-    //     } else if (username === "MCA2" && password === "MCA@2") {
-            
-    //         window.location.href = "mca2.html";
-    //     } else {
-            
-    //         document.getElementById('error-message').textContent = "Invalid username or password.";
-    //     }
-    // }
-
-     
     function captureLoginData(event) {
             event.preventDefault();  
             
@@ -295,10 +286,12 @@ button span {
 
           
             if (username === "MCA1" && password === "MCA@1") {
+                sessionStorage.setItem('loggedIn', 'true');
+
                 const queryString = `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
                 window.location.href = "form.html" + queryString;
         }else if (username === "MCA2" && password === "MCA@2") {
-            
+            sessionStorage.setItem('loggedIn', 'true');
             const queryString = `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
                 window.location.href = "form.html" + queryString;
         } else {
